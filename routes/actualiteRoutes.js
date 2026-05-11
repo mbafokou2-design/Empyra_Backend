@@ -13,10 +13,10 @@ const upload = require('../middleware/upload');
 const { protect } = require('../middleware/authMiddleware');
 
 /* ── GET ALL ── */
-router.get('/', protect, getAllActualites);
+router.get('/', getAllActualites);
 
 /* ── GET ONE ── */
-router.get('/:id', protect, getActualiteById);
+router.get('/:id', getActualiteById);
 
 /* ── CREATE ── */
 router.post('/', protect, upload.single('image'), createActualite);

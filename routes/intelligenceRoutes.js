@@ -13,9 +13,9 @@ const {
 const { protect } = require('../middleware/authMiddleware')
 const upload      = require('../middleware/upload')
 
-router.get('/',       protect, getIntelligences)
-router.get('/stats',  protect, getIntelligenceStats)   // GET /api/intelligence/stats
-router.get('/:id',    protect, getIntelligenceById)
+router.get('/',        getIntelligences)
+router.get('/stats',   getIntelligenceStats)   // GET /api/intelligence/stats
+router.get('/:id',    getIntelligenceById)
 router.post('/',      protect, upload.single('image'), createIntelligence)
 router.put('/:id',    protect, upload.single('image'), updateIntelligence)
 router.delete('/:id', protect, deleteIntelligence)
